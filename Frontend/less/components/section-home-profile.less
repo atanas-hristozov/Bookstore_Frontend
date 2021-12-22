@@ -1,0 +1,90 @@
+@import 'var.less';
+
+.section-home-profile{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media only screen and (min-width: @mobile){
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-start;
+        max-width: @max-width;
+        margin: 30px auto 0px auto;
+    }
+
+    &-search{
+        button{
+            color: @color-deep-blue;
+            background-color: white;
+            font-size: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            //border: 1px solid @color-green;
+            border: none;
+            box-shadow: 0px 0px 10px @color-light;
+            transition: 0.3s ease-in-out;
+            margin-left: 10px;
+        }
+        button:hover{
+            background-color: @color-green-d;
+            border: 1px solid @color-green-d;
+            color: white;
+        }
+    }
+
+    &-user{
+        display: flex;
+        margin-top: 20px;
+        @media only screen and (min-width: @mobile){
+            margin-top: 0px;
+        }
+        a{
+            margin: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            //background-color: @color-light;
+            //border: 1px solid @color-green;
+            background-color: rgba(218, 218, 218, 0.116);
+            box-shadow: 0px 0px 10px @color-light;
+            border-radius: 5px;
+            width: 100px;
+            transition: 0.3s ease-in-out;
+            @media only screen and (min-width: @mobile){
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 200px;
+            }
+            i{
+                color: @color-deep-blue;
+                font-size: 30px;
+                border: 1px solid @color-darker-grey;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                text-align: center;
+                padding-top: 7px;
+                margin-top: 10px; 
+                @media only screen and (min-width: @mobile){
+                    margin: 5px;
+                }
+            }
+            p{
+                color: @color-darker-grey;
+                //font-size: 14px;
+                line-height: 20px;
+                margin: 20px 20px 0 20px;
+                text-align: center;
+                @media only screen and (min-width: @mobile){
+                    margin: 0 10px;
+                }
+            }
+        }
+        a:hover{
+            transform: scale(1.1);
+        }
+    }
+}

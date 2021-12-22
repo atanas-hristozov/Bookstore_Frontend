@@ -1,0 +1,103 @@
+@import 'var.less';
+
+.simbook{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    h3{
+        color: @color-deep-blue;
+        font-size: 24px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 500;
+        margin: 10px 0;
+        @media only screen and (min-width: @mobile){
+            text-align: start;
+        }
+        @media only screen and (min-width: @desktop){
+            font-size: 40px;
+        }
+    }
+    &-table{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        margin: 10px;
+        @media only screen and (min-width: @mobile){
+            grid-template-columns: auto auto auto;
+            max-width: 700px;
+        }
+        @media only screen and (min-width: @desktop){
+            grid-template-columns: 180px 180px 180px 180px 180px 180px;
+            justify-content: center;
+        }
+        
+
+        &-item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px @color-light;
+            transition: 0.3s ease-in-out;
+            img{
+                border-radius: 7px 7px 0 0;
+            }
+            &-name{
+                text-align: center;
+                color: @color-deep-blue;
+                font-size: 12px;
+                text-transform: uppercase;
+                font-weight: 300;
+            }
+            &-author{
+                color: @color-deep-blue;
+                font-size: 10px;
+                text-transform: uppercase;
+                font-weight: 300;
+                margin: 0;
+            }
+            &-price{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &-value{
+                    display: flex;
+                    p{
+                        color: @color-deep-blue;
+                        font-size: 14px;
+                        font-weight: 500;
+                        margin: 0 3px;
+                    }
+                }
+                
+                button{
+                    color: @color-deep-blue;
+                    background-color: white;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    border: 1px solid @color-green;
+                    box-shadow: 0px 0px 10px @color-light;
+                    transition: 0.3s ease-in-out;
+                    margin-left: 15px;
+                }
+                button:hover{
+                    background-color: @color-green-d;
+                    border: 1px solid @color-green-d;
+                    color: white;
+                }
+            }
+        }
+        &-item:hover{
+            transform: scale(1.02);
+        }
+    }
+    
+
+}

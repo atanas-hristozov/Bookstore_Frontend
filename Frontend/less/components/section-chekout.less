@@ -1,0 +1,54 @@
+@import 'var.less';
+
+.chekout{
+    &-order{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &-table{
+            border-collapse: collapse;
+            //width: 100%;
+            thead{
+                tr{
+                    th {
+                        font-family: "Roboto";
+                        font-size: 16px;
+                        //border: 1px solid #dddddd;
+                        text-align: left;
+                        padding: 8px;
+                        background-color: @color-green-transparent;
+                        border-top: 1px solid @color-dark-green;
+                        border-bottom: 1px solid @color-dark-green;
+                    }
+                }
+            }
+            td, th {
+                font-family: "Roboto";
+                font-size: 14px;
+                //border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+                background-color: @color-green-transparent;
+                border-top: 1px solid @color-dark-green;
+                border-bottom: 1px solid @color-dark-green;
+            }
+            td:nth-child(odd) {
+                //width: 190px;
+            }
+        }
+    }
+    &-price{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px auto;
+        background-color: @color-green-transparent;
+        border: 1px solid @color-dark-green;
+        border-radius: 10px;
+        width: 300px;
+    }
+}

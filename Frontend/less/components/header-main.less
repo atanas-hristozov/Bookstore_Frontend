@@ -1,0 +1,284 @@
+@import 'var.less';
+
+  
+  .header {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    top: 0;
+    //background-image: url(../../img/Cover_03_03.jpg);
+    //background-repeat: none;
+    //background-size: cover;
+    //background-position: center;
+    //background-color: @color-dark-gray;
+    background: linear-gradient(45deg, #243a43, #1a2741);
+    border-bottom: 7px solid @color-green;
+    box-shadow: 0px 5px 10px rgba(32, 32, 32, 0.4);
+  }
+  
+  .header-content{
+    @media only screen and (min-width: @mobile){
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+  }
+  }
+
+
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .header li a {
+    color: #000;
+    display: block;
+    padding: 20px 20px;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
+  }
+  
+
+  .header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 20px 0px 0px 10px;
+    text-decoration: none;
+  }
+  
+  .header .logo{
+    width: 250px;
+    @media only screen and (min-width: 390px){
+      width: 300px;
+      padding: 20px 20px 0px 20px;
+    } 
+    @media only screen and (min-width: 480px){
+      width: auto;
+      padding: 10px 0px 0px 10px;
+    } 
+    
+    
+      
+  }
+  /* menu */
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 38px 20px;
+    position: relative;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #f4f4f4;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 30px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #f4f4f4;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 10px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -10px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 300px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  /* 48em = 768px */
+  
+  @media (min-width: 960px) {
+    .header li {
+      float: left;
+      background-color: rgba(0,0,0,0);//
+      border: none;
+    }
+    .header li a {
+      padding: 20px 20px;
+      border: none;
+      background-color: rgba(0,0,0,0);
+      color: #f4f4f4;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+      background-color: rgba(0,0,0,0);
+      padding-top: 10px;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
+  .menu{
+    @media only screen and (min-width: 960px){
+      a::after{
+          content: '';
+          display: block;
+          width: 0;
+          height: 2px;
+          background: @color-white;
+          transition: width 0.3s;
+      }
+      a:hover::after{
+          width: 100%;
+      }
+  }
+  }
+  
+/*
+  .menu-categories{
+    color: black;
+    padding: 20px 20px;
+    font-family: Helvetica,sans-serif;
+    transition: width 0.3s;
+    @media only screen and (min-width: 960px){
+      color: @color-white;
+      padding: 20px 30px;
+    }
+    div{
+      display: none;
+      
+      a{
+        margin: 20px 0;
+        padding: 0;
+        @media only screen and (min-width: 960px){
+          margin: 10px 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+  .menu-categories:hover{
+    background-color: rgba(0, 0, 0, 0.027);
+    padding: 0px 20px 10px 20px;
+    div{
+     // display: block;
+    }
+  }
+ */
+ 
+
+
+
+.dropdown {
+  //position: relative;
+  display: inline-block;
+  button{
+    color: black;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 20px 20px;
+    font-family: Helvetica,sans-serif;
+    font-size: 16px;
+    transition: width 0.3s;
+    outline: none;
+    cursor: pointer;
+    @media only screen and (min-width: 960px){
+      color: @color-white;
+      padding: 20px 30px;
+    }
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: @color-white;
+  margin-left: 10px;
+  @media only screen and (min-width: 960px){
+    background-color: @color-deep-blue;
+    margin: 0;
+  }
+  /*background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+  //z-index: 1;
+}
+
+
+.dropdown-content a {
+  /*color: black;
+  padding: 12px 16px;
+  text-decoration: none;*/
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: @color-white;
+  @media only screen and (min-width: 960px){
+    background-color: @color-green-deep;
+  }
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display:block;
+}
+
+/*.header-user{
+
+  &-link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}*/

@@ -1,0 +1,228 @@
+@import 'var.less';
+
+.shopping-cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    h2{
+        color: @color-deep-blue;
+        font-size: 24px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 500;
+        margin: 10px 0;
+        @media only screen and (min-width: @mobile){
+            text-align: start;
+        }
+        @media only screen and (min-width: @desktop){
+            font-size: 40px;
+        }
+    }
+    &-all{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @media only screen and (min-width: @desktop){
+            flex-direction: row;
+            max-width: @max-width;
+            align-items: flex-start;
+        }
+        
+        &-list{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            @media only screen and (min-width: @mobile){
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            &-item{
+                margin: 10px;
+                box-shadow: 0 0 10px @color-light;
+                border-radius: 10px;
+                @media only screen and (min-width: @mobile){
+                    width: 350px;
+                }
+                @media only screen and (min-width: @desktop){
+                    width: 200px;
+                }
+                &-info{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    @media only screen and (min-width: @desktop){
+                        
+                    }
+                    img{
+                        border-radius: 10px 10px 0 0;
+                        width: 100%;
+                        height: auto;
+                    }
+                    p{
+                        color: @color-deep-blue;
+                        text-align: center;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                    &-buttons{
+                        display: flex;
+                        flex-direction: row;
+                        @media only screen and (min-width: @desktop){
+                            flex-direction: column;
+                        }
+                        button{
+                            box-shadow: 0 0 10px @color-green-d;
+                            color: white;
+                            border: 1px solid @color-deep-blue;
+                            background: linear-gradient(@color-green-deep, @color-deep-blue);
+                            width: 150px;
+                            height: 50px;
+                            margin: 10px;
+                            border-radius: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            @media only screen and (min-width: @desktop){
+                                width: 150px;
+                            }
+                        }
+                        button:hover{
+                            background: linear-gradient(@color-deep-blue, @color-green-deep);
+                        }
+                    }
+                }
+                &-value{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 20px 0;
+                    button{
+                        color: @color-deep-blue;
+                        background-color: white;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                        border: 1px solid @color-green;
+                        box-shadow: 0px 0px 10px @color-light;
+                        transition: 0.3s ease-in-out;
+                        i{
+                            font-size: 12px;
+                        }
+                    }
+                    button:hover{
+                        background-color: @color-green-d;
+                        border: 1px solid @color-green-d;
+                        color: white;
+                    }
+                    input{
+                        width: 50px;
+                        margin: 0 20px;
+                    }
+                }
+            }
+        }
+        
+        &-ordered{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            box-shadow: 0 0 10px @color-light;
+            border-radius: 10px;
+            @media only screen and (min-width: @desktop){
+                width: 350px;
+            }
+            h4{
+                color: @color-deep-blue;
+                font-size: 24px;
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: 500;
+                margin: 10px 0;
+                @media only screen and (min-width: @desktop){
+                    font-size: 40px;
+                }
+            }
+            &-details{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                &-items{
+                    /*display: grid;
+                    grid-template-columns: 200px 100px;*/
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    &-value{
+                        display: grid;
+                        grid-template-columns: 200px 100px;
+                        align-items: center;
+                        h6{
+                            padding-left: 10px;
+                            font-size: 12px;
+                        }
+                        p{
+                            font-size: 12px;
+                        }
+                    }
+                    &-value:nth-child(odd) {
+                        background-color: @color-green-transparent;
+                        border-top: 1px solid @color-dark-green;
+                        border-bottom: 1px solid @color-dark-green;
+                    }
+                }
+                &-total{
+                    background-color: @color-green-transparent;
+                    border: 1px solid @color-dark-green;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 300px;
+                    margin: 10px 0;
+                    h6{
+                        color: @color-deep-blue;
+                        font-size: 18px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        font-weight: 500;
+                        margin: 10px 0;
+                        @media only screen and (min-width: @mobile){
+                            text-align: start;
+                        }
+                        @media only screen and (min-width: @desktop){
+                            font-size: 20px;
+                        }
+                    }
+                    a{
+                        box-shadow: 0 0 10px @color-green-d;
+                        color: white;
+                        border: 1px solid @color-deep-blue;
+                        background: linear-gradient(@color-green-deep, @color-deep-blue);
+                        width: 200px;
+                        height: 50px;
+                        border-radius: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 18px;
+                        text-transform: uppercase;
+                    }
+                    a:hover{
+                        background: linear-gradient(@color-deep-blue, @color-green-deep);
+                    }
+                }
+            }
+        }
+    }
+}
